@@ -8,6 +8,10 @@ body {
   background-position: center;
 }
 
+/*==========================================
+                GAME BOARD
+==========================================*/
+
 #connectContainer {
   margin: auto;
   width: 1000px;
@@ -42,4 +46,38 @@ body {
   height: 75px;
   border-radius: 100%;
   /* background-color: red; */
+  cursor: pointer;
 }
+
+/*==========================================
+              FLOATING CANDLES
+==========================================*/
+.floatCandle {
+  position: absolute;
+  margin-top: -400px;
+  animation: floatCandle;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+}
+
+.floatCandle2 {
+  position: absolute;
+  margin-top: -700px;
+  margin-left: 1000px;
+  animation: floatCandle;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+}
+
+.floatCandle img {
+  width: 30px;
+ }
+
+ .floatCandle2 img {
+   width: 50px;
+ }
+
+ @keyframes floatCandle {
+   50% {transform: translateY(50px)};
+   50% {transform: translateY(-50px)}
+ }
