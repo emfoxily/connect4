@@ -8,6 +8,11 @@ body {
   background-position: center;
 }
 
+h2 {
+  font-family: 'Henny Penny';
+  font-size: 30px;
+}
+
 /*==========================================
                 GAME BOARD
 ==========================================*/
@@ -22,10 +27,10 @@ body {
   background: url('images/connectfourboard.png');
   background-size: cover;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   justify-content: space-between;
   margin: auto;
-  margin-top: 300px;
+  margin-top: 275px;
   width: 575px;
   height: 550px;
   border-radius: 10px;
@@ -50,6 +55,62 @@ body {
 }
 
 /*==========================================
+          CHOOSE YOUR HOUSE MODAL
+==========================================*/
+#selectHouse {
+  background: rgba(0, 0 ,0, 0.6);
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+
+#selectHouseHeader {
+  background: url('images/choosehousebanner.png');
+  color: white;
+  margin: auto;
+  width: 500px;
+  height: 318px;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 350px;
+}
+
+#selectHouseBox {
+  width: 850px;
+  margin: auto;
+  display: flex;
+  flex-flow: row;
+}
+
+#selectHouseBox img {
+  width: 200px;
+}
+
+#gryffindor, #ravenclaw, #hufflepuff, #slytherin {
+  background: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+/*==========================================
+          HOGWARTS & HOUSE CRESTS
+==========================================*/
+.hogCrest {
+  position: absolute;
+  top: 10px;
+  margin-left: 400px;
+}
+
+.hogCrest img {
+  width: 200px;
+}
+
+/*==========================================
               FLOATING CANDLES
 ==========================================*/
 .floatCandle {
@@ -69,15 +130,33 @@ body {
   animation-iteration-count: infinite;
 }
 
+.floatCandle3 {
+   position: absolute;
+   margin-top: -200px;
+   margin-left: 1000px;
+   animation: floatCandle2;
+   animation-duration: 6s;
+   animation-iteration-count: infinite;
+}
+
 .floatCandle img {
-  width: 30px;
- }
+   width: 30px;
+}
 
- .floatCandle2 img {
-   width: 50px;
- }
+.floatCandle2 img {
+    width: 50px;
+}
 
- @keyframes floatCandle {
+.floatCandle3 img {
+    width: 20px;
+}
+
+@keyframes floatCandle {
    50% {transform: translateY(50px)};
    50% {transform: translateY(-50px)}
- }
+}
+
+@keyframes floatCandle2 {
+   40% {transform: translateY(-50px)};
+   50% {transform: translateY(50px)}
+}
