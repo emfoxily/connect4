@@ -32,6 +32,9 @@ const selectHouse = () => {
     let house = $(event.currentTarget).children();
     $(house).css('opacity', '0.2');
     $players.push(house);
+    if ($players.length === 2) {
+      closeModal();
+    }
     console.log($players);
   })
 }
