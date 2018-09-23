@@ -73,7 +73,7 @@ h2 {
   height: 550px;
   border-radius: 10px;
   padding: 2%;
-  /* animation: float; */
+  animation: float;
   animation-duration: 6s;
   animation-iteration-count: infinite;
 }
