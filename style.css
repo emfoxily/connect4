@@ -18,12 +18,15 @@ h2 {
 ==========================================*/
 #playerOne {
   position: absolute;
-  /* background: red; */
+  background: transparent;
   top: 25%;
   margin-left: -100px;
   width: 200px;
   height: 200px;
   overflow: hidden;
+  cursor: pointer;
+  border: none;
+  outline: none;
 }
 
 #playerOne img {
@@ -32,12 +35,15 @@ h2 {
 
 #playerTwo {
   position: absolute;
-  /* background: red; */
+  background: transparent;
   top: 25%;
   margin-left: 900px;
   width: 200px;
   height: 200px;
   overflow: hidden;
+  cursor: pointer;
+  border: none;
+  outline: none;
 }
 
 #playerTwo img {
@@ -57,6 +63,7 @@ h2 {
 .connectFour {
   background: url('images/connectfourboard.png');
   background-size: cover;
+  border: 1px solid black;
   display: flex;
   flex-flow: column wrap;
   justify-content: space-between;
@@ -66,7 +73,7 @@ h2 {
   height: 550px;
   border-radius: 10px;
   padding: 2%;
-  animation: float;
+  /* animation: float; */
   animation-duration: 6s;
   animation-iteration-count: infinite;
 }
@@ -74,6 +81,12 @@ h2 {
 @keyframes float {
   50% {transform: translateY(50px)}
   50% {transform: translateY(-50px)}
+}
+
+.row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
 }
 
 .circle {
@@ -153,11 +166,14 @@ h2 {
   height: 100%;
   width: 100%;
   display: none;
+  justify-content: center;
 }
 
 #sortingHat {
-  width: 850px;
+  width: 800px;
   margin: auto;
+  margin-left: 590px;
+  margin-top: 100px;
   display: block;
 }
 
@@ -171,6 +187,7 @@ h2 {
 .floatCandle {
   position: absolute;
   margin-top: -400px;
+  z-index: -10;
   animation: floatCandle;
   animation-duration: 6s;
   animation-iteration-count: infinite;
@@ -179,7 +196,8 @@ h2 {
 .floatCandle2 {
   position: absolute;
   margin-top: -700px;
-  margin-left: 1000px;
+  margin-left: 1200px;
+  z-index: -10;
   animation: floatCandle;
   animation-duration: 6s;
   animation-iteration-count: infinite;
@@ -189,6 +207,7 @@ h2 {
    position: absolute;
    margin-top: -200px;
    margin-left: 1000px;
+   z-index: -10;
    animation: floatCandle2;
    animation-duration: 6s;
    animation-iteration-count: infinite;
