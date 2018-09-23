@@ -14,6 +14,37 @@ h2 {
 }
 
 /*==========================================
+                  PLAYERS
+==========================================*/
+#playerOne {
+  position: absolute;
+  /* background: red; */
+  top: 25%;
+  margin-left: -100px;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+
+#playerOne img {
+  width: 200px;
+}
+
+#playerTwo {
+  position: absolute;
+  /* background: red; */
+  top: 25%;
+  margin-left: 900px;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+
+#playerTwo img {
+  width: 200px;
+}
+
+/*==========================================
                 GAME BOARD
 ==========================================*/
 
@@ -108,6 +139,30 @@ h2 {
 
 .hogCrest img {
   width: 200px;
+}
+
+/*==========================================
+              SORTING HAT MODAL
+==========================================*/
+#hatBox {
+  background: rgba(0, 0 ,0, 0.6);
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+
+#sortingHat {
+  width: 850px;
+  margin: auto;
+  display: block;
+}
+
+#sortingHat img {
+  width: 500px;
 }
 
 /*==========================================
