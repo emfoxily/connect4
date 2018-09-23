@@ -24,6 +24,8 @@ const $hufflepuff = $('#hufflepuff');
 const $slytherin = $('#slytherin');
 // make array consisting of two players for sorting hat to loop through
 const $players = [];
+let $playerOne;
+let $playerTwo;
 
 // define a function that will prompt the user to pick a house (use a modal)
 const selectHouse = () => {
@@ -35,13 +37,21 @@ const selectHouse = () => {
     if ($players.length === 2) {
       closeModal();
     }
+    $playerOne = $players[0];
+    $playerTwo = $players[1];
+    $playerOne.clone().appendTo('#playerOne').css('opacity', '1');
+    $playerTwo.clone().appendTo('#playerTwo').css('opacity', '1');
     console.log($players);
   })
 }
 
 const closeModal = () => {
-  $('#selectHouse').hide('slow');
+  $('#selectHouse').hide(1000);
 }
+
+// const sortingHat = () => {
+//   $('#hatBox').show(2000);
+// }
 
 // write if else statements that will check for which house was selected
   // once player one has selected, make that house unclickable
