@@ -52,7 +52,7 @@ h2 {
   height: 1000px;
 }
 
-.connectFour {
+#connectFour {
   background: url('images/connectfourboard.png');
   background-size: cover;
   border: 1px solid black;
@@ -75,20 +75,15 @@ h2 {
   50% {transform: translateY(-50px)}
 }
 
-.row {
+#row {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
 }
 
-.row button {
-  background: transparent;
-  outline: none;
-  border: none;
-}
-
-.circle {
+#circle {
   display: inline-block;
+  background-size: cover;
   width: 75px;
   height: 75px;
   border-radius: 100%;
