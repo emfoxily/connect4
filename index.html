@@ -15,8 +15,8 @@
     </script>
     <!--======================================-->
     <!--========== JAVASCRIPT FILES ==========-->
-    <script src="connect4.js" charset="utf-8"></script>
-    <script src="app.js" charset="utf-8"></script>
+    <script src="js/connect4.js" charset="utf-8"></script>
+    <script src="js/app.js" charset="utf-8"></script>
     <!--======================================-->
     <!--========== SITE TITLE ==========-->
     <title>c o n n e c t 4</title>
@@ -34,53 +34,53 @@
       <!--===============================-->
       <!--========== GAME BOARD =========-->
       <div class = "connectFour">
-        <div class = "row">
-          <div class = "circle"></div>
-          <div class = "circle"></div>
-          <div class = "circle"></div>
-          <div class = "circle"></div>
-          <div class = "circle"></div>
-          <div class = "circle"></div>
+        <div id = "row">
+          <div id = "circle"></div>
+          <div id = "circle"></div>
+          <div id = "circle"></div>
+          <div id = "circle"></div>
+          <div id = "circle"></div>
+          <div id = "circle"></div>
         </div>
-        <div class = "row">
-          <div class = "circle"></div>
-          <div class = "circle"></div>
-          <div class = "circle"></div>
-          <div class = "circle"></div>
-          <div class = "circle"></div>
-          <div class = "circle"></div>
+        <div id = "row">
+          <div id = "circle"></div>
+          <div id = "circle"></div>
+          <div id = "circle"></div>
+          <div id = "circle"></div>
+          <div id = "circle"></div>
+          <div id = "circle"></div>
         </div>
-        <div class = "row">
-          <div class = "circle"></div>
-          <div class = "circle"></div>
-          <div class = "circle"></div>
-          <div class = "circle"></div>
-          <div class = "circle"></div>
-          <div class = "circle"></div>
+        <div id = "row">
+          <div id = "circle"></div>
+          <div id = "circle"></div>
+          <div id = "circle"></div>
+          <div id = "circle"></div>
+          <div id = "circle"></div>
+          <div id = "circle"></div>
         </div>
-        <div class = "row">
-          <div class = "circle"></div>
-          <div class = "circle"></div>
-          <div class = "circle"></div>
-          <div class = "circle"></div>
-          <div class = "circle"></div>
-          <div class = "circle"></div>
+        <div id = "row">
+          <div id = "circle"></div>
+          <div id = "circle"></div>
+          <div id = "circle"></div>
+          <div id = "circle"></div>
+          <div id = "circle"></div>
+          <div id = "circle"></div>
         </div>
-        <div class = "row">
-          <div class = "circle"></div>
-          <div class = "circle"></div>
-          <div class = "circle"></div>
-          <div class = "circle"></div>
-          <div class = "circle"></div>
-          <div class = "circle"></div>
+        <div id = "row">
+          <div id = "circle"></div>
+          <div id = "circle"></div>
+          <div id = "circle"></div>
+          <div id = "circle"></div>
+          <div id = "circle"></div>
+          <div id = "circle"></div>
         </div>
-        <div class = "row">
-          <div class = "circle"></div>
-          <div class = "circle"></div>
-          <div class = "circle"></div>
-          <div class = "circle"></div>
-          <div class = "circle"></div>
-          <div class = "circle"></div>
+        <div id = "row">
+          <div id = "circle"></div>
+          <div id = "circle"></div>
+          <div id = "circle"></div>
+          <div id = "circle"></div>
+          <div id = "circle"></div>
+          <div id = "circle"></div>
         </div>
       </div>
       <!--========================================-->
@@ -90,18 +90,10 @@
           <h2>Choose your house!</h2>
         </div>
         <div id = "selectHouseBox">
-          <button id = "gryffindor">
-            <img src = "images/gryffindor.png" alt = "Gryffindor">
-          </button>
-          <button id = "ravenclaw">
-            <img src = "images/ravenclaw.png" alt = "Ravenclaw">
-          </button>
-          <button id = "hufflepuff">
-            <img src = "images/hufflepuff.png" alt = "Hufflepuff">
-          </button>
-          <button id = "slytherin">
-            <img src = "images/slytherin.png" alt = "Slytherin">
-          </button>
+          <div id = "house" class = "gryffindor"></div>
+          <div id = "house" class = "ravenclaw"></div>
+          <div id = "house" class = "hufflepuff"></div>
+          <div id = "house" class = "slytherin"></div>
         </div>
       </div>
       <!--=======================================-->
@@ -113,8 +105,8 @@
       </div>
       <!--=============================-->
       <!--========== PLAYERS ==========-->
-      <button id = "playerOne"></button>
-      <button id = "playerTwo"></button>
+      <div id = "playerOne"></div>
+      <div id = "playerTwo"></div>
       <!--======================================-->
       <!--========== FLOATING CANDLES ==========-->
       <div class = "floatCandle">
