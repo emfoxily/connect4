@@ -98,5 +98,5 @@ const closeModal = () => {
     $(event.currentTarget).addClass($playerTwo);
     moves.shift();
     }
-    console.log(grid);
+    console.log(board);
   }
