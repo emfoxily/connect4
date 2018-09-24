@@ -75,13 +75,13 @@ h2 {
   50% {transform: translateY(-50px)}
 }
 
-#row {
+.row {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
 }
 
-#circle {
+.circle {
   display: inline-block;
   background-size: cover;
   width: 75px;
