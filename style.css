@@ -18,15 +18,11 @@ h2 {
 ==========================================*/
 #playerOne {
   position: absolute;
-  background: transparent;
   top: 25%;
   margin-left: -100px;
   width: 200px;
   height: 200px;
   overflow: hidden;
-  cursor: pointer;
-  border: none;
-  outline: none;
 }
 
 #playerOne img {
@@ -35,15 +31,11 @@ h2 {
 
 #playerTwo {
   position: absolute;
-  background: transparent;
   top: 25%;
   margin-left: 900px;
   width: 200px;
   height: 200px;
   overflow: hidden;
-  cursor: pointer;
-  border: none;
-  outline: none;
 }
 
 #playerTwo img {
@@ -87,6 +79,12 @@ h2 {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+}
+
+.row button {
+  background: transparent;
+  outline: none;
+  border: none;
 }
 
 .circle {
@@ -134,8 +132,10 @@ h2 {
   width: 200px;
 }
 
-#gryffindor, #ravenclaw, #hufflepuff, #slytherin {
-  background: transparent;
+#house {
+  display: block;
+  width: 300px;
+  height: 200px;
   outline: none;
   border: none;
   cursor: pointer;
@@ -152,6 +152,26 @@ h2 {
 
 .hogCrest img {
   width: 200px;
+}
+
+.gryffindor {
+  background-image: url('images/gryffindor.png');
+  background-size: cover;
+}
+
+.ravenclaw {
+  background-image: url('images/ravenclaw.png');
+  background-size: cover;
+}
+
+.hufflepuff {
+  background-image: url('images/hufflepuff.png');
+  background-size: cover;
+}
+
+.slytherin {
+  background-image: url('images/slytherin.png');
+  background-size: cover;
 }
 
 /*==========================================
