@@ -81,7 +81,7 @@ h2 {
   justify-content: space-between;
 }
 
-.circle {
+.col {
   display: inline-block;
   background-size: cover;
   width: 75px;
@@ -121,10 +121,6 @@ h2 {
   margin: auto;
   display: flex;
   flex-flow: row;
-}
-
-#selectHouseBox img {
-  width: 200px;
 }
 
 #house {
