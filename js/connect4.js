@@ -10,19 +10,22 @@ const createBoard = () => {
     let boardRow = [];
     const $row = $('<div>')
       .addClass('row');
-    for (let circle = 0; circle < 7; circle++) {
-      const $circle = $('<div>')
-      .addClass('circle')
-      .one('click', move);
-    boardRow.push($circle);
-    // const house = null;
-    // $circle.data('house', house)
-    $row.append($circle);
+    for (let col = 0; col < 7; col++) {
+      const $col = $('<div>')
+      .addClass('col')
+      .attr('id', 'cell-' + row.toString() + '-' + col.toString())
+      .one('click', move)
+    boardRow.push($col.attr('class'));
+    $row.append($col);
     }
     board.push(boardRow);
     $board.append($row);
   }
 }
+
+
+
+
 
 // make an empty array to push the selected houses to
   const $players = [];
@@ -60,8 +63,8 @@ const selectHouse = () => {
     $playerOne = $players[0];
     $playerTwo = $players[1];
     // append the images to the respective player divs
-    $('#playerOne').addClass($playerOne);
-    $('#playerTwo').addClass($playerTwo);
+    $('#playerOne').attr('class', $playerOne);
+    $('#playerTwo').attr('class', $playerTwo);
     // console.log($players);
   })
 }
@@ -84,19 +87,17 @@ const closeModal = () => {
                   19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33,
                   34, 35, 36, 37, 38, 39, 40, 41, 42];
 
-// make an empty array for board selections to live
-
-// calculate winner using the array
-
-
 
   const move = () => {
-    if (moves[0] % 2 !== 0) {
-    $(event.currentTarget).addClass($playerOne);
+    let coords = $(event.currentTarget).attr('id').split('-');
+    console.log('current row: ' + coords[1]);
+    console.log('current col: ' + coords[2]);
+    console.log($(event.currentTarget).attr('id'));
+    let currentPlayer = ((moves[0] % 2 !== 0) ? $playerOne : $playerTwo);
+    $(event.currentTarget).addClass(currentPlayer);
+    board[coords[1],coords[2]] = currentPlayer;
     moves.shift();
-  } else if (moves[0] % 2 === 0) {
-    $(event.currentTarget).addClass($playerTwo);
-    moves.shift();
-    }
     console.log(board);
+
+    // call function called isGameOver(currentPlayer)
   }
