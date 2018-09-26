@@ -106,8 +106,11 @@ const closeModal = () => {
 // }
 
 // make an array of moves that goes up to the number of circles
-  const moves = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
-  32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42];
+  var moves = [];
+
+  for (i = 0; i < (maxRows * maxCols); i++) {
+    moves.push(i);
+  }
 
 
 
@@ -128,8 +131,10 @@ const move = () => {
   moves.shift();
       console.log(board);
     // call function called isGameOver(currentPlayer)
-    let isWinner = evaluatePlayerRow(currentPlayer);
-    if (isWinner) {
+    // let isWinner = evaluateRows(currentPlayer);
+    if (evaluateRows(currentPlayer)) {
+      console.log('The winner is ' + currentPlayer);
+    } else if (evaluateCols(currentPlayer)) {
       console.log('The winner is ' + currentPlayer);
     } else if (moves.length === 0) {
       console.log('The game is a draw!');
@@ -138,7 +143,6 @@ const move = () => {
 
 // general rules
 // . cell can contain one of the following values: null, playerOne, or playerTwo
-//
 
 
 // row rules
@@ -152,13 +156,12 @@ const move = () => {
 // . for the current cell, if current cell equals currentPlayer increment currentPlayer column counter
 // . for the current cell, if current cell does not equal currentPlayer increment gap counter and set row counter to zero
 
-const evaluatePlayerRow = (currentPlayer) => {
+const evaluateRows = (currentPlayer) => {
   console.log('entering: evaluatePlayerRow');
   let isWinner = false;
   for (row = 0; row < maxRows; row++) {
     let matches = 0;
     if (isWinner) {
-      // console.log('the winner is: ' + isWinner);
       break;
     }
     for (col = 0; col < maxCols; col++) {
@@ -166,7 +169,6 @@ const evaluatePlayerRow = (currentPlayer) => {
         matches++;
         if (matches > 3) {
           isWinner = true;
-          // console.log('the winner is: ' + isWinner);
           break;
         }
       } else {
@@ -174,6 +176,28 @@ const evaluatePlayerRow = (currentPlayer) => {
       }
     }
   }
-  // console.log('the winner is: ' + currentPlayer);
+  return isWinner;
+}
+
+const evaluateCols = (currentPlayer) => {
+  console.log('entering: evaluatePlayerRow');
+  let isWinner = false;
+  for (col = 0; col < maxCols; col++) {
+    let matches = 0;
+    if (isWinner) {
+      break;
+    }
+    for (row = 0; row < maxRows; row++) {
+      if (board[row][col] == currentPlayer) {
+        matches++;
+        if (matches > 3) {
+          isWinner = true;
+          break;
+        }
+      } else {
+          matches = 0;
+      }
+    }
+  }
   return isWinner;
 }
