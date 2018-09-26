@@ -24,6 +24,24 @@
     <!--======================================-->
   </head>
   <body>
+    <!--============================================-->
+    <!--========== GAME INFORMATION MODAL ==========-->
+    <div id = "gameInfo">
+      <h1>Wingardium LeviosFour</h1>
+      <h3>"It's leviOsa, not leviosaR!"</h3>
+      <div class = "infoBox">
+        <h2>How to Play</h2>
+        <p>
+          <b>The best game in the wizarding world since Wizard's Chess!</b>
+          Represent your Hogwarts house in this revamped version of Connect Four!
+          Each player will select their house and the first player that does so,
+          makes the first move. Whoever gets four in a row vertically or horizontally,
+          wins! Click the button below to unlock the game!
+        </p>
+        <button onclick = "hideInfo()">Alohomora</button>
+      </div>
+    </div>
+
     <!--========================================-->
     <!--========== SELECT HOUSE MODAL ==========-->
     <div id = "selectHouse">
@@ -41,10 +59,11 @@
     <!--=======================================-->
     <!--========== SORTING HAT MODAL ==========-->
     <div id = "hatBox">
-      <div id = "sortingHat"></div>
+      <div class = "sortingHat"></div>
       <div class = "winnerAnnounce">
           <p>Better be...</p>
           <h2 class = "winner"></h2>
+          <button class = "reset" onclick = "reset()">Play again?</button>
       </div>
     </div>
 
