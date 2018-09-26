@@ -115,7 +115,7 @@ const move = () => {
   let coords = $(event.currentTarget).attr('id').split('-');
 
   // declare a variable called currentPlayer and set it equal to check if the move is divisible by two and update the currentPlayer variable accordingly
-  let currentPlayer = ((moves[0] % 2 !== 0) ? $playerOne : $playerTwo);
+  let currentPlayer = ((moves[0] % 2 === 0) ? $playerOne : $playerTwo);
 
   // add the class of the currentPlayer
   $(event.currentTarget).addClass(currentPlayer);
