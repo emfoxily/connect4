@@ -42,6 +42,7 @@ const createBoard = () => {
     $board.append($row);
   }
 
+  // empty cells so that there's nothing in them until a user clicks one
   for (row = 0; row < maxRows; row++) {
     for (col = 0; col < maxCols; col++) {
       board[row][col] = null;
@@ -66,17 +67,19 @@ const selectHouse = () => {
     console.log($(event.currentTarget).attr('class'));
     $players.push($(event.currentTarget).attr('class'));
 
+    //----------------------------------------------//
       // if ($players[0] === undefined) {
       //   console.log('this code is up to no good');
       // } else {
       //   console.log('mischief managed');
       // }
+    //----------------------------------------------//
 
     // write if else statements that will check for if two houses were selected
     if ($players.length === 2) {
     // close modal if it returns true
       closeModal();
-      event.stopPropagation();
+      // event.stopPropagation();
     } else {
       // do nothing
     }
@@ -84,6 +87,7 @@ const selectHouse = () => {
     // assign the array indexes to the player variables
     $playerOne = $players[0];
     $playerTwo = $players[1];
+
     // append the images to the respective player divs
     $('#playerOne').attr('class', $playerOne);
     $('#playerTwo').attr('class', $playerTwo);
@@ -97,67 +101,44 @@ const closeModal = () => {
   $('#selectHouse').hide(1000);
 }
 
-// define a function that pops up a new modal (the sorting hat) to state who goes first
-// const sortingHat = () => {
-//   $('#hatBox').show(2000);
-//   const first = $players[Math.floor(Math.random() *
-//    $players.length)];
-//   console.log('Better be...' + first + '!');
-// }
-
 // make an array of moves that goes up to the number of circles
   var moves = [];
-
+  // use for loop to generate the amount of moves possible by multiplying maxRows by maxCols
   for (i = 0; i < (maxRows * maxCols); i++) {
     moves.push(i);
   }
 
-
-
 // define a function called move that will house the click event for adding the house crest to the selected circle
 const move = () => {
+
   // declare a variable for coordinates and give it the value of the current target along with a unique id
   let coords = $(event.currentTarget).attr('id').split('-');
-  //---------------------------------------------------------//
-      console.log('current row: ' + coords[1]);
-      console.log('current col: ' + coords[2]);
-      console.log($(event.currentTarget).attr('id'));
-  //---------------------------------------------------------//
+
   // declare a variable called currentPlayer and set it equal to check if the move is divisible by two and update the currentPlayer variable accordingly
   let currentPlayer = ((moves[0] % 2 !== 0) ? $playerOne : $playerTwo);
+
   // add the class of the currentPlayer
   $(event.currentTarget).addClass(currentPlayer);
     board[coords[1]][coords[2]] = currentPlayer;
   moves.shift();
-      console.log(board);
-    // call function called isGameOver(currentPlayer)
-    // let isWinner = evaluateRows(currentPlayer);
+
+  const sortingHat = () => {
+    $('#hatBox').show(2000);
+    $('.winner').append(currentPlayer + '!');
+  }
+
     if (evaluateRows(currentPlayer)) {
+      sortingHat();
       console.log('The winner is ' + currentPlayer);
     } else if (evaluateCols(currentPlayer)) {
+      sortingHat();
       console.log('The winner is ' + currentPlayer);
     } else if (moves.length === 0) {
       console.log('The game is a draw!');
     }
-  }
-
-// general rules
-// . cell can contain one of the following values: null, playerOne, or playerTwo
-
-
-// row rules
-// . if currentPlayer has four consecutive cells in a row, currentPlayer wins
-// . for the current cell, if current cell equals currentPlayer increment currentPlayer row counter
-// . for the current cell, if current cell does not equal currentPlayer increment gap counter and set row counter to zero
-
-
-// column rules
-// . if current player has four consecutive cells in a column, currentPlayer wins
-// . for the current cell, if current cell equals currentPlayer increment currentPlayer column counter
-// . for the current cell, if current cell does not equal currentPlayer increment gap counter and set row counter to zero
+}
 
 const evaluateRows = (currentPlayer) => {
-  console.log('entering: evaluatePlayerRow');
   let isWinner = false;
   for (row = 0; row < maxRows; row++) {
     let matches = 0;
@@ -180,7 +161,6 @@ const evaluateRows = (currentPlayer) => {
 }
 
 const evaluateCols = (currentPlayer) => {
-  console.log('entering: evaluatePlayerRow');
   let isWinner = false;
   for (col = 0; col < maxCols; col++) {
     let matches = 0;
