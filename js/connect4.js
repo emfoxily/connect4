@@ -50,15 +50,31 @@ const createBoard = () => {
   }
 }
 
+//========================================//
+//            GAME INFO MODAL             //
+//========================================//
+
+const hideInfo = () => {
+$('#gameInfo').fadeOut(500);
+}
+
+//========================================//
+//            CREATE PLAYERS              //
+//========================================//
+
 // make an empty array to push the selected houses to
   const $players = [];
 // declare variables for the players, but don't assign values
   let $playerOne;
   let $playerTwo;
 
+//========================================//
+//              SELECT HOUSE              //
+//========================================//
+
 // define a function that will prompt the user to pick a house (use a modal)
 const selectHouse = () => {
-  $('#selectHouse').show(2000);
+  $('#selectHouse').fadeIn(2000);
   // create event for when crest is clicked
   $('#selectHouseBox > div').one('click', (event) => {
     // give crest low opacity upon being clicked to tell the user it's already been chosen
@@ -67,13 +83,13 @@ const selectHouse = () => {
     console.log($(event.currentTarget).attr('class'));
     $players.push($(event.currentTarget).attr('class'));
 
-    //----------------------------------------------//
+    //--------------------------------------//
       // if ($players[0] === undefined) {
       //   console.log('this code is up to no good');
       // } else {
       //   console.log('mischief managed');
       // }
-    //----------------------------------------------//
+    //--------------------------------------//
 
     // write if else statements that will check for if two houses were selected
     if ($players.length === 2) {
@@ -98,8 +114,12 @@ const selectHouse = () => {
 // define the function that will close the select house modal upon the two players selections
 const closeModal = () => {
   // hide the modal
-  $('#selectHouse').hide(1000);
+  $('#selectHouse').fadeOut(500);
 }
+
+//========================================//
+//              CREATE MOVES              //
+//========================================//
 
 // make an array of moves that goes up to the number of circles
   var moves = [];
@@ -122,10 +142,25 @@ const move = () => {
     board[coords[1]][coords[2]] = currentPlayer;
   moves.shift();
 
+  //========================================//
+  //              SORTING HAT               //
+  //========================================//
+
   const sortingHat = () => {
-    $('#hatBox').show(2000);
-    $('.winner').append(currentPlayer + '!');
+    const $sortingModal = $('#hatBox');
+    $sortingModal.fadeIn(500);
+    const $winner = $('.winner');
+    if (evaluateRows(currentPlayer) || evaluateCols(currentPlayer)) {
+      $winner.append(currentPlayer + '!');
+    } else if (moves.length === 0) {
+      const $draw = 'a draw!';
+      $winner.append($draw);
+    }
   }
+
+//========================================//
+//               FIND WINNER              //
+//========================================//
 
     if (evaluateRows(currentPlayer)) {
       sortingHat();
@@ -134,9 +169,14 @@ const move = () => {
       sortingHat();
       console.log('The winner is ' + currentPlayer);
     } else if (moves.length === 0) {
+      sortingHat();
       console.log('The game is a draw!');
     }
 }
+
+//========================================//
+//         CHECK ROWS & COLUMNS           //
+//========================================//
 
 const evaluateRows = (currentPlayer) => {
   let isWinner = false;
@@ -180,4 +220,12 @@ const evaluateCols = (currentPlayer) => {
     }
   }
   return isWinner;
+}
+
+//========================================//
+//               RESET GAME               //
+//========================================//
+
+const reset = () => {
+  window.location.reload();
 }
