@@ -125,6 +125,7 @@ const closeModal = () => {
   var moves = [];
   // use for loop to generate the amount of moves possible by multiplying maxRows by maxCols
   for (i = 0; i < (maxRows * maxCols); i++) {
+    // push the total for the moves to the moves array
     moves.push(i);
   }
 
@@ -140,16 +141,22 @@ const move = () => {
   // add the class of the currentPlayer
   $(event.currentTarget).addClass(currentPlayer);
     board[coords[1]][coords[2]] = currentPlayer;
+  // remove the move from the moves array
   moves.shift();
 
   //========================================//
   //              SORTING HAT               //
   //========================================//
 
+  // define a function for the sorting hat modal
   const sortingHat = () => {
+    // declare a variable with the #hatbox set as the value
     const $sortingModal = $('#hatBox');
+    // make sorting hat modal fade in
     $sortingModal.fadeIn(500);
+    // declare a variable for the winner div
     const $winner = $('.winner');
+    // depending on win scenario, have sorting hat alert winner or draw
     if (evaluateRows(currentPlayer) || evaluateCols(currentPlayer)) {
       $winner.append(currentPlayer + '!');
     } else if (moves.length === 0) {
@@ -161,16 +168,16 @@ const move = () => {
 //========================================//
 //               FIND WINNER              //
 //========================================//
-
+    // use if statements to determine a winner after each row and column check
     if (evaluateRows(currentPlayer)) {
       sortingHat();
-      console.log('The winner is ' + currentPlayer);
+      // console.log('The winner is ' + currentPlayer);
     } else if (evaluateCols(currentPlayer)) {
       sortingHat();
-      console.log('The winner is ' + currentPlayer);
+      // console.log('The winner is ' + currentPlayer);
     } else if (moves.length === 0) {
       sortingHat();
-      console.log('The game is a draw!');
+      // console.log('The game is a draw!');
     }
 }
 
@@ -178,6 +185,7 @@ const move = () => {
 //         CHECK ROWS & COLUMNS           //
 //========================================//
 
+// define function that checks each row for four consecutive matches
 const evaluateRows = (currentPlayer) => {
   let isWinner = false;
   for (row = 0; row < maxRows; row++) {
@@ -200,6 +208,7 @@ const evaluateRows = (currentPlayer) => {
   return isWinner;
 }
 
+// like the row function, check for four consecutive matches in the columns
 const evaluateCols = (currentPlayer) => {
   let isWinner = false;
   for (col = 0; col < maxCols; col++) {
@@ -226,6 +235,7 @@ const evaluateCols = (currentPlayer) => {
 //               RESET GAME               //
 //========================================//
 
+// reload the page to reset the game 
 const reset = () => {
   window.location.reload();
 }
