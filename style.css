@@ -145,22 +145,22 @@ h2 {
   width: 200px;
 }
 
-.gryffindor {
+.Gryffindor {
   background-image: url('images/gryffindor.png');
   background-size: cover;
 }
 
-.ravenclaw {
+.Ravenclaw {
   background-image: url('images/ravenclaw.png');
   background-size: cover;
 }
 
-.hufflepuff {
+.Hufflepuff {
   background-image: url('images/hufflepuff.png');
   background-size: cover;
 }
 
-.slytherin {
+.Slytherin {
   background-image: url('images/slytherin.png');
   background-size: cover;
 }
@@ -171,25 +171,32 @@ h2 {
 #hatBox {
   background: rgba(0, 0 ,0, 0.6);
   position: fixed;
-  z-index: 0;
+  z-index: 4;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
   display: none;
-  justify-content: center;
+  padding: 50px;
 }
 
 #sortingHat {
-  width: 800px;
+  background: url('images/sortinghat.png');
+  background-size: cover;
+  width: 450px;
+  height: 350px;
   margin: auto;
-  margin-left: 590px;
-  margin-top: 100px;
   display: block;
 }
 
-#sortingHat img {
-  width: 500px;
+.winnerAnnounce {
+  margin: auto;
+  width: 400px;
+  font-family: arial;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
 }
 
 /*==========================================
