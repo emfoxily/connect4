@@ -92,6 +92,64 @@ h2 {
 }
 
 /*==========================================
+          GAME INFORMATION MODAL
+==========================================*/
+#gameInfo {
+  background: rgb(136, 64, 154);
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  font-family: arial;
+  font-size: 12px;
+  color: white;
+  text-align: center;
+}
+
+#gameInfo h1 {
+  margin-top: 100px;
+  font-family: 'Henny Penny';
+  font-size: 40px;
+  line-height: 10px;
+  animation: float;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+}
+
+.infoBox {
+  margin: auto;
+  margin-top: 100px;
+  width: 600px;
+  padding: 10px;
+  font-family: arial;
+  font-size: 14px;
+  color: white;
+  text-align: center;
+}
+
+.infoBox b {
+  font-size: 16px;
+}
+
+.infoBox button {
+  width: 100px;
+  height: 40px;
+  padding: 2px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 5px;
+  font-family: arial;
+  font-size: 12px;
+  font-weight: bold;
+  color: rgb(136, 64, 154);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/*==========================================
           CHOOSE YOUR HOUSE MODAL
 ==========================================*/
 #selectHouse {
@@ -177,14 +235,15 @@ h2 {
   height: 100%;
   width: 100%;
   display: none;
-  padding: 50px;
+  padding-top: 150px;
 }
 
-#sortingHat {
+.sortingHat {
   background: url('images/sortinghat.png');
   background-size: cover;
   width: 450px;
   height: 350px;
+  margin-left: -500px;
   margin: auto;
   display: block;
 }
@@ -194,9 +253,31 @@ h2 {
   width: 400px;
   font-family: arial;
   font-size: 12px;
+  font-weight: bold;
   text-transform: uppercase;
   color: white;
   text-align: center;
+  line-height: 10px;
+}
+
+.winner {
+  font-size: 45px;
+}
+
+.reset {
+  margin-top: 50px;
+  width: 100px;
+  height: 50px;
+  padding: 2px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: rgb(136, 64, 154);
+  color: white;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 /*==========================================
