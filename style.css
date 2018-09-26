@@ -95,7 +95,7 @@ h2 {
           GAME INFORMATION MODAL
 ==========================================*/
 #gameInfo {
-  background: rgb(136, 64, 154);
+  background: rgb(113, 43, 100);
   position: fixed;
   z-index: 5;
   top: 0;
@@ -144,7 +144,7 @@ h2 {
   font-family: arial;
   font-size: 12px;
   font-weight: bold;
-  color: rgb(136, 64, 154);
+  color: rgb(113, 43, 100);
   text-transform: uppercase;
   cursor: pointer;
 }
@@ -272,7 +272,7 @@ h2 {
   border-radius: 10px;
   border: none;
   outline: none;
-  background: rgb(136, 64, 154);
+  background: rgb(113, 43, 100);
   color: white;
   font-size: 14px;
   text-transform: uppercase;
