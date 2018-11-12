@@ -105,8 +105,8 @@ const selectHouse = () => {
     $playerTwo = $players[1];
 
     // append the images to the respective player divs
-    $('#playerOne').attr('class', $playerOne);
-    $('#playerTwo').attr('class', $playerTwo);
+    $('#playerOne').attr('class', $playerOne)
+    $('#playerTwo').attr('class', $playerTwo).css('opacity', .5)
     // console.log($players);
   })
 }
@@ -137,6 +137,14 @@ const move = () => {
 
   // declare a variable called currentPlayer and set it equal to check if the move is divisible by two and update the currentPlayer variable accordingly
   let currentPlayer = ((moves[0] % 2 === 0) ? $playerOne : $playerTwo);
+
+  if (currentPlayer === $playerTwo) {
+    $('#playerOne').css('opacity', 1)
+    $('#playerTwo').css('opacity', .5)
+  } else {
+    $('#playerTwo').css('opacity', 1)
+    $('#playerOne').css('opacity', .5)
+  }
 
   // add the class of the currentPlayer
   $(event.currentTarget).addClass(currentPlayer);
@@ -235,7 +243,7 @@ const evaluateCols = (currentPlayer) => {
 //               RESET GAME               //
 //========================================//
 
-// reload the page to reset the game 
+// reload the page to reset the game
 const reset = () => {
   window.location.reload();
 }
