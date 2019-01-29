@@ -1,11 +1,14 @@
 # Wingardium LeviosFour :sparkles: :zap: :sparkles:
 ###### "It's leviOsa not leviosaR!"
+
+[Link to the app!](https://emfoxily.com/connect4/)
+
 -------------------------------------------
 ## How to Play:
 
 **The best game in the wizarding world since Wizard's Chess!**
 
-Represent your Hogwarts house in this revamped version of Connect Four! Each player will select their house and the first player that does so, makes the first move. Whoever gets four in a row vertically or horizontally, wins! Go to [this](https://emfoxily.com/connect4/) website to play!
+Represent your Hogwarts house in this revamped version of Connect Four! Each player will select their house and the first player that does so, makes the first move. Whoever gets four in a row vertically or horizontally, wins! Go to [this](https://emfoxily.com/connect4/) link to play!
 
 ### Prerequisites:
 -------------------------------------------
